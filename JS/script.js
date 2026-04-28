@@ -351,7 +351,7 @@ function handleOrder(e) {
 
     const adminNum = "6285187270055"; 
 
-    let msg = `Form Pickup laundrybandung.com%0A%0A`;
+    let msg = `Form Pickup laundrybandung.com%2C%0A%0A`;
     msg += `*IDENTITAS*%0A`;
     msg += `- Nama Lengkap : ${nama}%0A`;
     msg += `- Alamat Pickup: (sebutkan no kamar jika di kost/hotel) : ${alamat}%0A`;
@@ -372,7 +372,7 @@ function handleOrder(e) {
     msg += `*PERINGATAN*:%0A`;
     msg += `Dengan order artinya *menyetujui Syarat dan Ketentuan yang berlaku*. Pembayaran hanya via *QRIS/CASH di Outlet*. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib *Video Unboxing*.`;
 
-    window.open(`https://wa.me/${adminNum}?text=${msg}`, '_blank');
+    window.open(`https://api.whatsapp.com/send/?phone=${adminNum}&text=${msg}`, '_blank');
 }
 
 // ==========================================
