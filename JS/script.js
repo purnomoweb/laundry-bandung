@@ -339,7 +339,7 @@ function handleOrder(e) {
 
     const adminNum = "6285187270055"; 
 
-    let msg = `Form Pickup Laundry%0A%0A`;
+    let msg = `Form Pickup laundrybandung.com%0A%0A`;
     msg += `*IDENTITAS*%0A`;
     msg += `- Nama Lengkap : ${nama}%0A`;
     msg += `- Alamat Pickup: (sebutkan no kamar jika di kost/hotel) : ${alamat}%0A`;
