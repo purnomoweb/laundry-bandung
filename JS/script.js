@@ -203,20 +203,32 @@ document.addEventListener('DOMContentLoaded', renderPricelist);
 // 1. Inisialisasi Animasi Scroll (AOS)
 AOS.init({ once: true, offset: 50 });
 
-// 2. Toggle Menu Mobile (Smooth Animation)
+// 2. Toggle Menu Mobile (Smooth Animation & Change Icon)
 const mobileMenu = document.getElementById('mobile-menu');
-document.getElementById('mobile-menu-btn').addEventListener('click', () => {
-    // Menukar kelas tertutup (0) dengan kelas terbuka (96/100)
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenuIcon = mobileMenuBtn.querySelector('i'); // Mengambil elemen <i> icon di dalam tombol
+
+mobileMenuBtn.addEventListener('click', () => {
+    // Menukar kelas menu agar terbuka/tertutup
     mobileMenu.classList.toggle('max-h-0');
     mobileMenu.classList.toggle('opacity-0');
     mobileMenu.classList.toggle('max-h-96');
     mobileMenu.classList.toggle('opacity-100');
+
+    // Menukar icon garis tiga menjadi tanda silang (dan sebaliknya)
+    mobileMenuIcon.classList.toggle('fa-bars');
+    mobileMenuIcon.classList.toggle('fa-xmark');
 });
 
 // Fungsi untuk menutup menu saat salah satu link diklik
 function toggleMenu() { 
+    // Sembunyikan menu
     mobileMenu.classList.add('max-h-0', 'opacity-0'); 
     mobileMenu.classList.remove('max-h-96', 'opacity-100'); 
+    
+    // Kembalikan icon menjadi garis tiga
+    mobileMenuIcon.classList.add('fa-bars');
+    mobileMenuIcon.classList.remove('fa-xmark');
 }
 
 // 3. Logika Tabs Menu Pricelist (Dengan Warna Dinamis)
