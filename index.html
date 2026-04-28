@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaundryBandung.com - Solusi Kilat Laundry Wisatawan & Hotel</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#005bea',
+                            orange: '#f57c00',
+                            dark: '#1e293b',
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="CS/style.css">
+</head>
+<body class="bg-brand-light text-brand-dark antialiased selection:bg-brand-blue selection:text-white">
+
+    <nav class="glass fixed w-full z-50 top-0 border-b border-gray-100 shadow-sm" data-aos="fade-down">
+        <div class="max-w-6xl mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center">
+                    <img src="Assets/Brand/laundry-bandung-1.jpg" alt="Logo LaundryBandung.com" class="h-14 md:h-16 w-auto object-contain">
+                </a>
+                
+                <div class="hidden md:flex space-x-8 font-semibold text-sm items-center">
+                    <a href="#keunggulan" class="text-gray-600 hover:text-brand-blue transition">Keunggulan</a>
+                    <a href="#cara-kerja" class="text-gray-600 hover:text-brand-blue transition">Cara Kerja</a>
+                    <a href="#harga" class="text-gray-600 hover:text-brand-blue transition">Harga</a>
+                    <a href="#faq" class="text-gray-600 hover:text-brand-blue transition">FAQ</a>
+                    <a href="#pesan" class="bg-brand-blue text-white px-6 py-2.5 rounded-full hover:bg-blue-700 transition text-sm shadow-md">Pesan Sekarang</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-brand-dark focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden transition-all duration-500 ease-in-out max-h-0 opacity-0 overflow-hidden">
+                <div class="pt-4 pb-2 flex flex-col space-y-4 font-semibold text-sm border-t border-gray-100 mt-3">
+                    <a href="#keunggulan" class="text-gray-600 hover:text-brand-blue transition" onclick="toggleMenu()">Keunggulan</a>
+                    <a href="#cara-kerja" class="text-gray-600 hover:text-brand-blue transition" onclick="toggleMenu()">Cara Kerja</a>
+                    <a href="#harga" class="text-gray-600 hover:text-brand-blue transition" onclick="toggleMenu()">Harga</a>
+                    <a href="#faq" class="text-gray-600 hover:text-brand-blue transition" onclick="toggleMenu()">FAQ</a>
+                    <a href="#pesan" class="bg-brand-blue text-white text-center px-4 py-3 rounded-xl shadow-md w-full transition hover:bg-blue-700" onclick="toggleMenu()">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative pt-32 pb-16 px-4 overflow-hidden">
+        
+        <div class="absolute inset-0 z-0 bg-gray-100">
+            <img src="Assets/Galeri/cloud-laundry.jpg" alt="Cloud Laundry Background" class="w-full h-full object-cover object-center opacity-60">
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-light via-brand-light/80 to-white/30 z-0"></div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center" data-aos="zoom-in" data-aos-duration="1000">
+            <p class="text-brand-blue text-xs md:text-sm font-extrabold uppercase tracking-widest mb-4 bg-white/50 backdrop-blur-md inline-block px-4 py-1 rounded-full border border-white/60">
+                <i class="fa-solid fa-bolt text-brand-orange mr-1"></i> Solusi Laundry No. 1 di Bandung
+            </p>
+            
+            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4 drop-shadow-md">
+                Staycation Nyaman, <br class="hidden md:block"> <span class="text-brand-blue drop-shadow-sm">Urusan Pakaian Biar Kami Yang Tangani.</span>
+            </h1>
+            
+            <p class="text-sm md:text-base text-gray-800 mb-8 max-w-2xl mx-auto leading-relaxed font-medium bg-white/30 backdrop-blur-sm p-2 rounded-xl">
+                Khusus Wisatawan & Tamu Hotel. Kami jemput langsung ke Lobi Hotel/Vila Anda di bawah 30 menit. Selesai kilat mulai dari 6 jam!
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#pesan" class="bg-brand-orange text-white px-6 py-3 rounded-full font-bold text-sm hover:scale-105 transition shadow-lg shadow-orange-300 flex items-center gap-2">
+                    Order Penjemputan <i class="fa-solid fa-arrow-right text-xs"></i>
+                </a>
+                <div class="flex items-center gap-2 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full border border-gray-200 shadow-sm">
+                    <i class="fa-solid fa-star text-yellow-400"></i>
+                    <span class="text-xs font-bold text-gray-700">Dipercaya 20.000+ Wisatawan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="keunggulan" class="py-12 bg-white scroll-mt-24">
+        <div class="text-center mb-10" data-aos="fade-up">
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-2">Keunggulan</h2>
+        </div>
+        <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="flex flex-col items-center text-center p-6 border border-gray-100 rounded-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-blue-50 text-brand-blue w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
+                    <i class="fa-solid fa-motorcycle"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Penjemputan Kilat</h3>
+                <p class="text-sm text-gray-500 font-light">Kurir meluncur dan standby di Lobi Hotel/Vila kurang dari 30 menit setelah order.</p>
+            </div>
+            <div class="flex flex-col items-center text-center p-6 bg-brand-blue text-white rounded-2xl shadow-xl shadow-blue-200 hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
+                    <i class="fa-solid fa-stopwatch"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2 text-white">Layanan Kilat</h3>
+                <p class="text-sm text-blue-100 font-light">Tersedia layanan Express 6 Jam dan One Day Service 24 jam khusus wisatawan.</p>
+            </div>
+            <div class="flex flex-col items-center text-center p-6 border border-gray-100 rounded-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-orange-50 text-brand-orange w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="text-base font-bold mb-2">Aman & Tergaransi</h3>
+                <p class="text-sm text-gray-500 font-light">Pakaian dicuci terpisah. Garansi cuci ulang jika hasil cucian tidak memuaskan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="cara-kerja" class="py-16 bg-gray-50 scroll-mt-24">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-2">Cara Kerja Cloud Laundry</h2>
+                <p class="text-sm text-gray-500 font-light">Hanya 4 langkah mudah, tanpa perlu keluar kamar.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div data-aos="flip-left" data-aos-delay="100">
+                    <div class="bg-white w-16 h-16 mx-auto rounded-full shadow-sm flex items-center justify-center text-xl font-bold text-brand-blue mb-3 border-2 border-brand-blue">1</div>
+                    <h4 class="font-bold text-sm mb-1">Isi Formulir</h4>
+                    <p class="text-[13px] text-gray-500 font-light">Lengkapi data via web/WA.</p>
+                </div>
+                <div data-aos="flip-left" data-aos-delay="200">
+                    <div class="bg-white w-16 h-16 mx-auto rounded-full shadow-sm flex items-center justify-center text-xl font-bold text-brand-blue mb-3 border-2 border-brand-blue">2</div>
+                    <h4 class="font-bold text-sm mb-1">Kurir Menjemput</h4>
+                    <p class="text-[13px] text-gray-500 font-light">Tunggu di lobi/resepsionis.</p>
+                </div>
+                <div data-aos="flip-left" data-aos-delay="300">
+                    <div class="bg-white w-16 h-16 mx-auto rounded-full shadow-sm flex items-center justify-center text-xl font-bold text-brand-blue mb-3 border-2 border-brand-blue">3</div>
+                    <h4 class="font-bold text-sm mb-1">Proses Cuci</h4>
+                    <p class="text-[13px] text-gray-500 font-light">Ditimbang & dicuci bersih.</p>
+                </div>
+                <div data-aos="flip-left" data-aos-delay="400">
+                    <div class="bg-white w-16 h-16 mx-auto rounded-full shadow-sm flex items-center justify-center text-xl font-bold text-brand-blue mb-3 border-2 border-brand-blue">4</div>
+                    <h4 class="font-bold text-sm mb-1">Diantar Kembali</h4>
+                    <p class="text-[13px] text-gray-500 font-light">Pakaian rapi siap pakai.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="harga" class="py-16 bg-white scroll-mt-24">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-8" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-2">Pricelist Layanan</h2>
+                <p class="text-sm text-gray-500 font-light">Pilih kecepatan layanan di bawah untuk melihat rincian harga.</p>
+            </div>
+
+            <div class="flex justify-center flex-wrap gap-3 mb-10" data-aos="fade-up" data-aos-delay="100">
+                <button class="tab-btn bg-blue-500 text-white border-blue-500 px-5 py-2.5 rounded-full text-sm font-semibold transition shadow-md border" onclick="openPricelistTab(event, 'tab-reguler', 'bg-blue-500', 'border-blue-500')">
+                    <i class="fa-solid fa-calendar-check mr-1"></i> Reguler (2-3 Hari)
+                </button>
+                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-5 py-2.5 rounded-full text-sm font-semibold transition border hover:border-orange-500" onclick="openPricelistTab(event, 'tab-oneday', 'bg-orange-500', 'border-orange-500')">
+                    <i class="fa-solid fa-sun mr-1"></i> One Day (24 Jam)
+                </button>
+                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-5 py-2.5 rounded-full text-sm font-semibold transition border hover:border-red-500" onclick="openPricelistTab(event, 'tab-express', 'bg-red-500', 'border-red-500')">
+                    <i class="fa-solid fa-bolt mr-1"></i> Express (6 Jam)
+                </button>
+                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-5 py-2.5 rounded-full text-sm font-semibold transition border hover:border-purple-500" onclick="openPricelistTab(event, 'tab-quick', 'bg-purple-500', 'border-purple-500')">
+                    <i class="fa-solid fa-rocket mr-1"></i> Quick
+                </button>
+            </div>
+
+            <div id="tab-reguler" class="tab-content animate-[fadeIn_0.5s_ease-in-out] block">
+                </div>
+
+            <div id="tab-oneday" class="tab-content animate-[fadeIn_0.5s_ease-in-out] hidden">
+                </div>
+
+            <div id="tab-express" class="tab-content animate-[fadeIn_0.5s_ease-in-out] hidden">
+                </div>
+
+            <div id="tab-quick" class="tab-content animate-[fadeIn_0.5s_ease-in-out] hidden">
+                </div>
+
+        </div>
+    </section>
+    
+    <section id="testimoni" class="py-16 bg-gray-50 overflow-hidden scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-4 mb-10 text-center" data-aos="fade-up">
+            <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-2">Ulasan Pelanggan <br/><span class="text-brand-blue">Laundry Bandung</span></h2>
+            <div class="flex justify-center items-center gap-2 mb-2">
+                <div class="flex text-yellow-400 text-sm">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="font-bold text-sm text-gray-700">4.9 / 5.0</span>
+            </div>
+        </div>
+
+        <div class="relative flex overflow-x-hidden">
+            <div id="marquee-track" class="flex whitespace-nowrap gap-6 animate-marquee py-4">
+                </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-16 bg-blue-50 scroll-mt-24">
+        <div class="max-w-3xl mx-auto px-4" data-aos="fade-up">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold mb-2">Pertanyaan Umum</h2>
+                <p class="text-sm text-gray-500 font-light">Klik pertanyaan di bawah untuk melihat jawaban.</p>
+            </div>
+            <div class="space-y-3">
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="w-full text-left p-4 font-bold text-sm text-brand-dark flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        Berapa minimal order untuk layanan antar-jemput?
+                        <i class="fa-solid fa-chevron-down text-brand-blue transform transition-transform duration-300 faq-icon"></i>
+                    </button>
+                    <div class="faq-content px-4 text-[13px] text-gray-600 bg-gray-50 font-light">
+                        Minimal order untuk layanan Kiloan adalah 3 kg. Anda bisa menggabungkan dengan cucian satuan untuk mencapai estimasi minimal transaksi.
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="w-full text-left p-4 font-bold text-sm text-brand-dark flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        Bagaimana sistem pembayarannya?
+                        <i class="fa-solid fa-chevron-down text-brand-blue transform transition-transform duration-300 faq-icon"></i>
+                    </button>
+                    <div class="faq-content px-4 text-[13px] text-gray-600 bg-gray-50 font-light">
+                        Pembayaran dilakukan setelah pakaian selesai dicuci dan siap diantar. Anda bisa membayar menggunakan Cash ke kurir atau scan QRIS yang dibawa kurir kami.
+                    </div>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                    <button class="w-full text-left p-4 font-bold text-sm text-brand-dark flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                        Apakah baju saya akan digabung dengan orang lain?
+                        <i class="fa-solid fa-chevron-down text-brand-blue transform transition-transform duration-300 faq-icon"></i>
+                    </button>
+                    <div class="faq-content px-4 text-[13px] text-gray-600 bg-gray-50 font-light">
+                        Tidak. Kami menjamin 1 mesin 1 pelanggan (Private Wash) untuk menjaga higienitas dan menghindari pakaian tertukar atau kelunturan.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pesan" class="py-16 bg-white px-4 scroll-mt-24">
+        <div class="max-w-3xl mx-auto bg-gray-50 rounded-3xl shadow-2xl overflow-hidden border border-gray-200 relative z-10" data-aos="flip-up" data-aos-duration="1000">
+            <div class="bg-brand-blue p-6 text-white text-center">
+                <h2 class="text-2xl font-bold mb-1 italic">Form Order Pickup</h2>
+                <p class="text-[13px] text-blue-100 opacity-90 font-light">Pesanan otomatis diteruskan ke WhatsApp Admin</p>
+            </div>
+            
+            <form id="laundryForm" onsubmit="handleOrder(event)" class="p-6 md:p-8 space-y-8">
+                
+                <div>
+                    <h3 class="font-bold text-sm mb-4 text-brand-blue border-b border-gray-200 pb-2"><i class="fa-solid fa-user mr-2 text-brand-orange"></i> I. Identitas & Lokasi</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="space-y-1">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Nama Lengkap</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-regular fa-id-badge"></i></div>
+                                <input type="text" id="nama" required class="w-full pl-9 pr-3 py-3 text-sm rounded-lg bg-white border border-gray-300 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition">
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">No. WhatsApp</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-brands fa-whatsapp"></i></div>
+                                <input type="tel" id="wa" required class="w-full pl-9 pr-3 py-3 text-sm rounded-lg bg-white border border-gray-300 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition">
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 space-y-1">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Alamat Pickup (Sebutkan no kamar jika hotel/kost)</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-map-location-dot"></i></div>
+                                <input type="text" id="alamat" required class="w-full pl-9 pr-3 py-3 text-sm rounded-lg bg-white border border-gray-300 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition" placeholder="Cth: Hotel Aston Pasteur, Kamar 201">
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Waktu Pickup</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-regular fa-clock"></i></div>
+                                <input type="text" id="waktu" required class="w-full pl-9 pr-3 py-3 text-sm rounded-lg bg-white border border-gray-300 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition" placeholder="Cth: Segera / Jam 19:00">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-sm mb-4 text-brand-blue border-b border-gray-200 pb-2"><i class="fa-solid fa-shirt mr-2 text-brand-orange"></i> II. Detail Cucian</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <div class="space-y-1 custom-dropdown">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Paket Kiloan</label>
+                            <div class="relative">
+                                <input type="hidden" id="paket" value="">
+                                <button type="button" class="w-full pl-9 pr-4 py-3 text-sm rounded-lg bg-white border border-gray-300 text-left focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition flex items-center justify-between" onclick="toggleDropdown('drop-paket')">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-basket-shopping"></i></span>
+                                    <span id="text-paket" class="text-gray-400">Pilih Paket</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                                </button>
+                                <ul id="drop-paket" class="hidden absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('paket', 'Cuci Kering Lipat')">Cuci Kering Lipat</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('paket', 'Cuci Kering Gosok')">Cuci Kering Gosok</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('paket', 'Jasa Setrika')">Jasa Setrika</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 custom-dropdown">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Layanan Kecepatan</label>
+                            <div class="relative">
+                                <input type="hidden" id="layanan" value="">
+                                <button type="button" class="w-full pl-9 pr-4 py-3 text-sm rounded-lg bg-white border border-gray-300 text-left focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition flex items-center justify-between" onclick="toggleDropdown('drop-layanan')">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-gauge-high"></i></span>
+                                    <span id="text-layanan" class="text-gray-400">Pilih Layanan</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                                </button>
+                                <ul id="drop-layanan" class="hidden absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('layanan', 'Reguler')">Reguler</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('layanan', 'One Day')">One Day</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('layanan', 'Express')">Express</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('layanan', 'Quick')">Quick</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 custom-dropdown">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Proses Cuci</label>
+                            <div class="relative">
+                                <input type="hidden" id="proses" value="">
+                                <button type="button" class="w-full pl-9 pr-4 py-3 text-sm rounded-lg bg-white border border-gray-300 text-left focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition flex items-center justify-between" onclick="toggleDropdown('drop-proses')">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-layer-group"></i></span>
+                                    <span id="text-proses" class="text-gray-400">Pilih Proses</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                                </button>
+                                <ul id="drop-proses" class="hidden absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('proses', 'Gabung perkantong')">Gabung perkantong</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('proses', 'Pisah perkantong')">Pisah perkantong</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 custom-dropdown">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Ada Barang Berharga?</label>
+                            <div class="relative">
+                                <input type="hidden" id="berharga" value="">
+                                <button type="button" class="w-full pl-9 pr-4 py-3 text-sm rounded-lg bg-white border border-gray-300 text-left focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition flex items-center justify-between" onclick="toggleDropdown('drop-berharga')">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-regular fa-gem"></i></span>
+                                    <span id="text-berharga" class="text-gray-400">Pilih Ya/Tidak</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                                </button>
+                                <ul id="drop-berharga" class="hidden absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('berharga', 'Ya')">Ya</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('berharga', 'Tidak')">Tidak</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 custom-dropdown">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Tas Cucian</label>
+                            <div class="relative">
+                                <input type="hidden" id="tas" value="">
+                                <button type="button" class="w-full pl-9 pr-4 py-3 text-sm rounded-lg bg-white border border-gray-300 text-left focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition flex items-center justify-between" onclick="toggleDropdown('drop-tas')">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-bag-shopping"></i></span>
+                                    <span id="text-tas" class="text-gray-400">Pilih Kembali/Tidak</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                                </button>
+                                <ul id="drop-tas" class="hidden absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('tas', 'Kembali')">Kembali</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('tas', 'Tidak')">Tidak</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 custom-dropdown">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Ada Yang Luntur?</label>
+                            <div class="relative">
+                                <input type="hidden" id="luntur" value="">
+                                <button type="button" class="w-full pl-9 pr-4 py-3 text-sm rounded-lg bg-white border border-gray-300 text-left focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition flex items-center justify-between" onclick="toggleDropdown('drop-luntur')">
+                                    <span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-droplet"></i></span>
+                                    <span id="text-luntur" class="text-gray-400">Pilih Ya/Tidak</span>
+                                    <i class="fa-solid fa-chevron-down text-xs text-gray-400"></i>
+                                </button>
+                                <ul id="drop-luntur" class="hidden absolute z-50 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('luntur', 'Ya')">Ya</li>
+                                    <li class="px-4 py-2 text-sm cursor-pointer hover:bg-brand-blue hover:text-white transition" onclick="selectOption('luntur', 'Tidak')">Tidak</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Cuci Satuan <span class="font-normal lowercase">(Isi jika ada)</span></label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-tags"></i></div>
+                                <input type="text" id="satuan" class="w-full pl-9 pr-3 py-3 text-sm rounded-lg bg-white border border-gray-300 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition" placeholder="Cth: 1 Jas, 1 Sepatu">
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Jumlah <span class="font-normal lowercase">(Kantong / Pcs)</span></label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-gray-400"><i class="fa-solid fa-hashtag"></i></div>
+                                <input type="text" id="jumlah" required class="w-full pl-9 pr-3 py-3 text-sm rounded-lg bg-white border border-gray-300 focus:outline-none focus:border-brand-blue focus:ring-1 focus:ring-brand-blue transition" placeholder="Cth: 2 Kantong / 10 Pcs">
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 space-y-1 mt-2">
+                            <label class="text-[11px] font-bold text-gray-500 uppercase">Catatan (Jika ada)</label>
+                            <textarea id="catatan" rows="2" class="w-full p-3 text-sm rounded-lg bg-white border border-gray-300 focus:outline-none focus:border-brand-blue font-light" placeholder="Contoh: Tanpa parfum, satuan tidak dihanger tapi dilipat dll"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-orange-50 border-l-4 border-brand-orange p-4 rounded-r-lg space-y-2 flex items-start gap-3">
+                    <i class="fa-solid fa-circle-exclamation text-brand-orange text-lg mt-0.5"></i>
+                    <div>
+                        <h4 class="font-bold text-[13px] text-brand-orange">PERINGATAN:</h4>
+                        <p class="text-[11px] text-gray-600 font-light text-justify leading-relaxed">Dengan order artinya <b class="font-bold">menyetujui <button type="button" onclick="openModal('modalSnk')" class="text-brand-blue underline cursor-pointer">Syarat dan Ketentuan</button> yang berlaku</b>. Pembayaran hanya via <b class="font-bold">QRIS/CASH di Outlet</b>. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib <b class="font-bold">Video Unboxing</b>.</p>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebd5c] text-white font-bold py-3 md:py-4 rounded-xl text-sm md:text-base shadow-lg transition flex items-center justify-center gap-2 hover:scale-[1.02]">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Kirim Order via WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="space-y-5" data-aos="fade-right">
+                <h2 class="font-extrabold text-xl md:text-2xl tracking-tighter uppercase italic">
+                    LaundryBandung<span class="text-brand-orange">.com</span>
+                </h2>
+                <p class="text-[13px] text-gray-400 leading-relaxed font-light">
+                    Solusi Cloud Laundry nomor satu untuk wisatawan dan tamu hotel di Bandung. Jemput di lobi, cucian bersih, rapi, dan wangi dalam hitungan jam!
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/laundrybandungcom" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition text-lg">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="space-y-4" data-aos="fade-up">
+                <h3 class="text-lg font-bold text-brand-orange mb-4 border-b border-gray-700 pb-2 inline-block">Hubungi Kami</h3>
+                <ul class="text-[13px] text-gray-400 space-y-3 font-light">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot text-brand-orange w-4 text-center mt-1"></i>
+                        <span>Jl. Pasteur No. 10, Kota Bandung</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-brand-orange w-4 text-center"></i>
+                        <a href="https://wa.me/6285187270055" target="_blank" class="hover:text-brand-orange transition cursor-pointer">
+                            WA: 0851-8727-0055
+                        </a>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-regular fa-clock text-brand-orange w-4 text-center"></i>
+                        <span>Buka: 07.00 - 22.00 WIB</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="space-y-4" data-aos="fade-left">
+                <h3 class="text-lg font-bold text-brand-orange mb-4 border-b border-gray-700 pb-2 inline-block">Lokasi Operasional</h3>
+                <div class="w-full h-36 md:h-40 bg-gray-800 rounded-xl overflow-hidden border border-gray-700 relative">
+                    <div class="absolute inset-0 bg-gray-700 animate-pulse -z-10"></div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7922.044132490753!2d107.6038001!3d-6.8879601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e658b2b15ee7%3A0x4ca05f2b17b1f5e2!2sJl.%20Cihampelas%20No.193a%2C%20Cipaganti%2C%20Kecamatan%20Coblong%2C%20Kota%20Bandung%2C%20Jawa%20Barat%2040131%2C%20Indonesia!5e0!3m2!1sid!2sus!4v1776904330609!5m2!1sid!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-4 mt-10 pt-6 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-[11px] text-gray-500 font-light">© 2026 laundrybandung.com. All rights reserved.</p>
+            <div class="flex gap-4 text-[11px] text-gray-500">
+                <button onclick="openModal('modalPrivasi')" class="hover:text-white transition">Kebijakan Privasi</button>
+                <button onclick="openModal('modalSnk')" class="hover:text-white transition">Syarat & Ketentuan</button>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modalSnk" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-2xl w-full max-w-lg max-h-[80vh] overflow-hidden shadow-2xl flex flex-col transform transition-transform scale-95 origin-center">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                <h3 class="font-bold text-lg text-brand-dark">Syarat & Ketentuan</h3>
+                <button onclick="closeModal('modalSnk')" class="text-gray-400 hover:text-red-500 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center font-bold transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto text-[13px] text-gray-600 space-y-3 font-light">
+                <p>1. <b class="font-bold">Pembayaran:</b> Dilakukan di akhir setelah cucian selesai, via QRIS/CASH. Estimasi waktu pengerjaan dimulai sejak konfirmasi penjemputan.</p>
+                <p>2. <b class="font-bold">Kehilangan/Kerusakan:</b> Klaim wajib menyertakan Video Unboxing. Ganti rugi maksimal 10x lipat dari harga jasa cuci barang tersebut.</p>
+                <p>3. <b class="font-bold">Kelunturan:</b> Kami tidak bertanggung jawab atas pakaian luntur/susut karena sifat bahan jika pelanggan tidak memberi catatan khusus sebelumnya.</p>
+                <p>4. <b class="font-bold">Barang Berharga:</b> Pastikan tidak ada uang/barang berharga di saku. Kehilangan barang di dalam saku bukan tanggung jawab kami.</p>
+            </div>
+            <div class="p-4 border-t border-gray-200 text-center">
+                <button onclick="closeModal('modalSnk')" class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-700 w-full md:w-auto shadow-md">Saya Mengerti</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalPrivasi" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+        <div class="bg-white rounded-2xl w-full max-w-lg max-h-[80vh] overflow-hidden shadow-2xl flex flex-col transform transition-transform scale-95 origin-center">
+            <div class="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                <h3 class="font-bold text-lg text-brand-dark">Kebijakan Privasi</h3>
+                <button onclick="closeModal('modalPrivasi')" class="text-gray-400 hover:text-red-500 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center font-bold transition"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="p-6 overflow-y-auto text-[13px] text-gray-600 space-y-3 font-light">
+                <p>1. <b class="font-bold">Pengumpulan Data:</b> Kami hanya mengumpulkan nama, nomor WA, dan alamat untuk keperluan operasional penjemputan dan pengiriman laundry.</p>
+                <p>2. <b class="font-bold">Penggunaan Data:</b> Data Anda tidak akan diperjualbelikan kepada pihak ketiga. Nomor WA hanya digunakan untuk update pesanan dan promo internal.</p>
+                <p>3. <b class="font-bold">Keamanan Data:</b> Percakapan dan data diri yang dikirim via WhatsApp dilindungi oleh enkripsi end-to-end dari sistem WhatsApp.</p>
+            </div>
+            <div class="p-4 border-t border-gray-200 text-center">
+                <button onclick="closeModal('modalPrivasi')" class="bg-brand-blue text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-blue-700 w-full md:w-auto shadow-md">Tutup</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sales-notification" class="fixed bottom-4 left-4 z-50 transform transition-all duration-500 translate-y-20 opacity-0 pointer-events-none flex items-center gap-3 bg-white/95 backdrop-blur-md p-3 pr-6 rounded-2xl shadow-2xl border border-gray-100">
+        <div class="bg-green-100 text-green-500 w-10 h-10 rounded-full flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-check-double"></i>
+        </div>
+        <div>
+            <p class="text-[10px] text-gray-500 font-light mb-0.5" id="notif-time">Baru saja</p>
+            <p class="text-[13px] text-brand-dark font-bold leading-tight" id="notif-desc">
+                Budi dari Aston Pasteur <br/>
+                <span class="text-brand-blue font-semibold text-[11px]">Order Express 6 Jam</span>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="JS/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+/* Menggunakan Font Outfit dan mengunci lebar untuk mode desktop HP */
+html, body { 
+    font-family: 'Outfit', sans-serif; 
+    max-width: 100%; 
+    overflow-x: hidden; 
+}
+
+.glass { 
+    background: rgba(255, 255, 255, 0.95); 
+    backdrop-filter: blur(8px); 
+}
+
+/* Transisi untuk Accordion FAQ */
+.faq-content { 
+    transition: max-height 0.3s ease-out, padding 0.3s ease; 
+    max-height: 0; 
+    overflow: hidden; 
+}
+.faq-content.open { 
+    max-height: 200px; 
+    padding-bottom: 1rem; 
+}
+
+/* Custom Scrollbar untuk Dropdown dan Tabel */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 8px; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* Menyembunyikan Native Select Arrow (Panah Bawaan Browser) */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Animasi Marquee (Berjalan ke Samping Tanpa Jeda) */
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 12px)); } /* 12px adalah setengah dari gap-6 */
+}
+
+.animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 40s linear infinite;
+}
+
+/* Berhenti saat kursor diarahkan ke card */
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Styling Card ala Google Maps */
+.google-review-card {
+    width: 320px;
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f1f5f9;
+    white-space: normal; /* Biar teks ulasan bisa turun ke bawah */
+}
