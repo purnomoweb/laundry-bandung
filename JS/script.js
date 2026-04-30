@@ -191,6 +191,52 @@ function renderTestimonials() {
     track.innerHTML = content + content;
 }
 
+// ==========================================
+// 11. HOTEL LOGO MARQUEE (Infinite Scroll)
+// ==========================================
+
+// Data Hotel
+const hotelData = [
+    { src: "Assets/Hotel/amaris.png", alt: "Amaris Hotel" },
+    { src: "Assets/Hotel/aston-tropicana.png", alt: "Aston Tropicana" },
+    { src: "Assets/Hotel/courtyard.png", alt: "Courtyard by Marriott" },
+    { src: "Assets/Hotel/fave-cihampelas.png", alt: "Favehotel Cihampelas" },
+    { src: "Assets/Hotel/grand-tjokro.png", alt: "Grand Tjokro" },
+    { src: "Assets/Hotel/hemangini.png", alt: "Hemangini Hotel" },
+    { src: "Assets/Hotel/hilton.png", alt: "Hilton Bandung" },
+    { src: "Assets/Hotel/moritz.png", alt: "Moritz Hotel" },
+    { src: "Assets/Hotel/moxy.png", alt: "Moxy Bandung" },
+    { src: "Assets/Hotel/novotel.png", alt: "Novotel Bandung" },
+    { src: "Assets/Hotel/parahyangan-golf.png", alt: "Parahyangan Golf" },
+    { src: "Assets/Hotel/prime-park.png", alt: "Prime Park Hotel" },
+    { src: "Assets/Hotel/promenade.png", alt: "Hotel Promenade" },
+    { src: "Assets/Hotel/savoy-homann.png", alt: "Savoy Homann" },
+    { src: "Assets/Hotel/sensa.png", alt: "Sensa Hotel" },
+    { src: "Assets/Hotel/serela.png", alt: "Serela Hotel" },
+    { src: "Assets/Hotel/travello.png", alt: "Travello Hotel" },
+    { src: "Assets/Hotel/zest.png", alt: "Zest Hotel" },
+    { src: "Assets/Hotel/hemangini.png", alt: "Hemangini Hotel" }, // Data ganda dari sebelumnya tetap dipertahankan
+];
+
+const trackEl = document.getElementById('hotel-track');
+
+if (trackEl) {
+    let logoHTML = '';
+    
+    // Loop untuk membuat kotak logo menggunakan hotelData
+    hotelData.forEach(hotel => {
+        // Perhatikan perubahan pada pemanggilan ${hotel.src} dan ${hotel.alt}
+        logoHTML += `
+            <div class="flex-shrink-0 w-32 md:w-40 h-16 md:h-20 rounded-xl flex items-center justify-center p-3 hover:opacity-100 transition-all duration-300">
+                <img src="${hotel.src}" alt="${hotel.alt}" class="max-h-full max-w-full object-contain">
+            </div>
+        `;
+    });
+
+    // Menggandakan data (print 2 kali) agar animasi scroll tidak putus
+    trackEl.innerHTML = logoHTML + logoHTML;
+}
+
 // Tambahkan ke event listener DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
     renderPricelist(); // Fungsi harga sebelumnya
@@ -370,7 +416,7 @@ function handleOrder(e) {
     msg += `- Catatan (Jika ada) : ${catatan}%0A%0A`;
     
     msg += `*PERINGATAN*:%0A`;
-    msg += `Dengan order artinya *menyetujui Syarat dan Ketentuan yang berlaku*. Pembayaran hanya via *QRIS/CASH di Outlet*. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib *Video Unboxing*.`;
+    msg += `Dengan order artinya *menyetujui Syarat dan Ketentuan yang berlaku*. Pembayaran 100% *Cashless*. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib *Video Unboxing*.`;
 
     window.open(`https://api.whatsapp.com/send/?phone=${adminNum}&text=${msg}`, '_blank');
 }
@@ -379,8 +425,17 @@ function handleOrder(e) {
 // 10. FAKE SALES NOTIFICATION (FOMO)
 // ==========================================
 const notifNames = ["Budi", "Siska", "Rian", "Anita", "Dimas", "Putri", "Hendra", "Maya", "Dinda", "Reza", "Tari", "Kiki"];
-const notifLocations = ["Aston Pasteur", "Trans Luxury Hotel", "Pullman Bandung", "Ibis Trans Studio", "Grand Tjokro", "Favehotel Braga", "Aryaduta", "GH Universal", "InterContinental", "Courtyard Dago"];
-const notifPackages = ["Order Express 6 Jam", "Order One Day Service", "Order Cuci Kering Lipat", "Order Cuci Sepatu", "Order Cuci Bedcover", "Order Cuci Jas Satuan"];
+
+// Daftar hotel yang sudah disesuaikan dengan database logo hotel
+const notifLocations = [
+    "Amaris Hotel", "Aston Tropicana", "Courtyard by Marriott", "Favehotel Cihampelas",
+    "Grand Tjokro", "Hemangini Hotel", "Hilton Bandung", "Moritz Hotel", "Moxy Bandung",
+    "Novotel Bandung", "Parahyangan Golf", "Prime Park Hotel", "Hotel Promenade",
+    "Savoy Homann", "Sensa Hotel", "Serela Hotel", "Travello Hotel", "Zest Hotel"
+];
+
+// Paket disesuaikan sedikit agar konsisten dengan layanan "Quick 3 Jam"
+const notifPackages = ["Order Layanan Quick 3 Jam", "Order One Day Service", "Order Cuci Kering Lipat", "Order Cuci Sepatu", "Order Cuci Bedcover", "Order Cuci Jas Satuan"];
 
 function showNotification() {
     const notifEl = document.getElementById('sales-notification');
