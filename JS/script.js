@@ -68,12 +68,12 @@ function formatRupiah(number) {
 
 // Fungsi untuk merender HTML dari Database
 function renderPricelist() {
-    // Pengaturan warna per tab
+    // Pengaturan warna per tab - Menggunakan text-brand-blue agar konsisten
     const tabsData = [
-        { id: 'tab-reguler', key: 'reguler', colorClass: 'text-blue-600', iconClass: 'text-blue-500' },
-        { id: 'tab-oneday', key: 'oneday', colorClass: 'text-orange-500', iconClass: 'text-orange-500' },
-        { id: 'tab-express', key: 'express', colorClass: 'text-red-500', iconClass: 'text-red-500' },
-        { id: 'tab-quick', key: 'quick', colorClass: 'text-purple-500', iconClass: 'text-purple-500' }
+        { id: 'tab-reguler', key: 'reguler', colorClass: 'text-brand-blue', iconClass: 'text-brand-blue' },
+        { id: 'tab-oneday', key: 'oneday', colorClass: 'text-brand-blue', iconClass: 'text-brand-blue' },
+        { id: 'tab-express', key: 'express', colorClass: 'text-brand-blue', iconClass: 'text-brand-blue' },
+        { id: 'tab-quick', key: 'quick', colorClass: 'text-brand-blue', iconClass: 'text-brand-blue' }
     ];
 
     tabsData.forEach(tab => {
@@ -86,11 +86,11 @@ function renderPricelist() {
             const allItems = category.items;
             
             if (allItems.length > 0) {
-                // PERBAIKAN: Memecah string icon (jika ada lebih dari 1) dan menyejajarkannya
+                // Memecah string icon (jika ada lebih dari 1) dan menyejajarkannya
                 const iconsHtml = category.icon.split(' ').map(ic => `<i class="fa-solid ${ic}"></i>`).join('');
 
                 htmlContent += `
-                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+                <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 shadow-sm">
                     <h4 class="font-bold text-brand-dark mb-4 border-b border-gray-200 pb-2 flex items-center">
                         <span class="${tab.iconClass} mr-2 flex gap-1.5 text-lg">${iconsHtml}</span>
                         <span class="flex-1">
@@ -113,7 +113,7 @@ function renderPricelist() {
                     }
 
                     htmlContent += `
-                        <div class="flex justify-between items-center bg-white p-3 rounded-xl shadow-sm border border-gray-100 hover:border-gray-300 transition gap-3 ${opacityClass}">
+                        <div class="flex justify-between items-center bg-white p-3 rounded-xl shadow-sm border border-gray-100 hover:border-brand-blue hover:shadow-md transition gap-3 ${opacityClass}">
                             <span class="text-[13px] font-semibold text-gray-700 flex-1 leading-snug">${item.name}</span>
                             ${priceDisplay}
                         </div>
@@ -277,30 +277,37 @@ function toggleMenu() {
     mobileMenuIcon.classList.remove('fa-xmark');
 }
 
-// 3. Logika Tabs Menu Pricelist (Dengan Warna Dinamis)
-function openPricelistTab(evt, tabName, bgColorClass, borderColorClass) {
-    // Sembunyikan semua konten tab
-    const tabcontent = document.getElementsByClassName("tab-content");
-    for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+// Fungsi untuk mengatur Tab Pricelist
+function openPricelistTab(evt, tabName) {
+    // 1. Sembunyikan semua konten tab terlebih dahulu
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(content => {
+        content.classList.remove('block');
+        content.classList.add('hidden');
+    });
+
+    // 2. Kembalikan SEMUA tombol ke warna asal (Putih & Teks Abu-abu)
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => {
+        // Hapus warna biru aktif
+        btn.classList.remove('bg-brand-blue', 'text-white', 'border-brand-blue');
+        // Tambahkan kembali warna putih tidak aktif & efek hover
+        btn.classList.add('bg-white', 'text-gray-600', 'border-gray-200', 'hover:border-brand-blue');
+    });
+
+    // 3. Tampilkan konten tab yang dipilih
+    const selectedTab = document.getElementById(tabName);
+    if (selectedTab) {
+        selectedTab.classList.remove('hidden');
+        selectedTab.classList.add('block');
     }
-    
-    // Reset semua tombol tab ke style default (Putih/Abu)
-    const tablinks = document.getElementsByClassName("tab-btn");
-    for (let i = 0; i < tablinks.length; i++) {
-        // Hapus warna aktif
-        tablinks[i].classList.remove('bg-blue-500', 'bg-orange-500', 'bg-red-500', 'bg-purple-500', 'text-white', 'border-blue-500', 'border-orange-500', 'border-red-500', 'border-purple-500', 'shadow-md');
-        // Tambahkan style default
-        tablinks[i].classList.add('bg-white', 'text-gray-600', 'border-gray-200');
-    }
-    
-    // Tampilkan konten tab yang dipilih
-    document.getElementById(tabName).style.display = "block";
-    
-    // Terapkan warna spesifik ke tombol yang di-klik
-    const clickedBtn = evt.currentTarget;
-    clickedBtn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
-    clickedBtn.classList.add(bgColorClass, 'text-white', borderColorClass, 'shadow-md');
+
+    // 4. Ubah warna tombol yang SEDANG DIKLIK menjadi biru aktif
+    const currentBtn = evt.currentTarget;
+    // Hapus warna putih tidak aktif
+    currentBtn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200', 'hover:border-brand-blue');
+    // Tambahkan warna biru aktif
+    currentBtn.classList.add('bg-brand-blue', 'text-white', 'border-brand-blue');
 }
 
 // 4. Logika Accordion FAQ

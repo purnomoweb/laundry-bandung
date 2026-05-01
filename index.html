@@ -16,7 +16,7 @@
                             blue: '#005bea',
                             orange: '#f57c00',
                             dark: '#1e293b',
-                            light: '#f8fafc'
+                            light: '#ffffff'
                         }
                     }
                 }
@@ -34,7 +34,7 @@
     
     <link rel="stylesheet" href="CS/style.css">
 </head>
-<body class="bg-brand-light text-brand-dark antialiased selection:bg-brand-blue selection:text-white">
+<body class="bg-white text-brand-dark font-['Outfit'] antialiased overflow-x-hidden selection:bg-brand-blue selection:text-white">
 
     <nav class="glass fixed w-full z-50 top-0 border-b border-gray-100 shadow-sm" data-aos="fade-down">
         <div class="max-w-6xl mx-auto px-4 py-3">
@@ -70,33 +70,24 @@
 
     <section class="relative pt-32 pb-16 px-4 overflow-hidden">
         
-        <!-- 1. Background Image -->
         <div class="absolute inset-0 z-0">
-            <!-- Opacity dihapus dari sini, kita kontrol sepenuhnya dari overlay -->
             <img src="Assets/Galeri/cloud-laundry.jpg" alt="Cloud Laundry Background" class="w-full h-full object-cover object-center">
         </div>
         
-        <!-- 2. Overlay Solid pudar (Bikin Clean) -->
-        <!-- Menggunakan putih dengan ketebalan 90% (white/90) agar gambar di belakang jadi sangat halus -->
-        <div class="absolute inset-0 bg-white/90 z-0"></div>
-
-        <!-- 3. Konten Utama -->
+        <div class="absolute inset-0 bg-white/95 z-0"></div>
+        
         <div class="relative z-10 max-w-5xl mx-auto text-center" data-aos="zoom-in" data-aos-duration="1000">
             
-            <!-- Label Atas: Diganti jadi solid soft-blue agar lebih rapi, tidak kotak transparan -->
             <p class="text-brand-blue text-xs md:text-sm font-extrabold uppercase tracking-widest mb-6">
-                <i class="fa-solid fa-bolt text-brand-orange mr-1"></i> Solusi Laundry No. 1 di Bandung
+                Solusi Laundry No. 1 di Bandung
             </p>
             
-            <!-- Headline: Drop shadow dikurangi agar teks lebih crisp (tajam) -->
             <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6 text-gray-900">
                 Jelajahi Bandung Sepuasnya, <br class="hidden md:block"> <span class="text-brand-blue">Urusan Baju Kotor Biar Kami yang Urus.</span>
             </h1>
             
-            <!-- Paragraf: Efek kotak background dan blur dihapus sepenuhnya -->
-            <!-- Warna teks dihitamkan (gray-700) agar kontras maksimal -->
             <p class="text-base md:text-lg text-gray-700 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
-                Khusus Wisatawan & Tamu Hotel! Jemput langsung ke Lobi/Vila di bawah <span class="font-bold text-brand-orange">30 menit</span>. Selesai kilat mulai <span class="font-bold text-purple-500">3 jam</span>. Sedang repot? Titip saja di Resepsionis!
+                Khusus Wisatawan & Tamu Hotel! Jemput langsung ke Lobi/Vila di bawah 30 menit. Selesai kilat mulai 3 jam. Sedang repot? Titip saja di Resepsionis!
             </p>
             
             <!-- Tombol CTA -->
@@ -129,18 +120,18 @@
                 <p class="text-sm text-gray-500 font-light">Kurir meluncur dan standby di Lobi Hotel/Vila kurang dari <span class="font-bold text-brand-orange text-[15px]">30 menit</span> setelah order. Sedang repot? Bisa dititip di Resepsionis!</p>
             </div>
             
-            <!-- Card 2 (Biru) -->
-            <div class="flex flex-col items-center text-center p-6 bg-brand-blue text-white rounded-2xl shadow-xl shadow-blue-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
-                <div class="bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
+            <!-- Card 2 (Layanan Kilat - Disesuaikan) -->
+            <div class="flex flex-col items-center text-center p-6 bg-white border border-gray-100 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-blue-50 text-brand-blue w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
                     <i class="fa-solid fa-stopwatch"></i>
                 </div>
-                <h3 class="text-base font-bold mb-2 text-white">Layanan Kilat</h3>
-                <p class="text-sm text-blue-100 font-light">Tidak perlu menunggu lama. Dengan Layanan Quick, cucian Anda bisa selesai dan langsung diantar mulai dari <span class="font-bold text-[15px]">3 jam</span>.</p>
+                <h3 class="text-base font-bold mb-2 text-brand-dark">Layanan Kilat</h3>
+                <p class="text-sm text-gray-500 font-light">Tidak perlu menunggu lama. Dengan Layanan Quick, cucian Anda bisa selesai dan langsung diantar mulai dari <span class="font-bold text-brand-orange text-[15px]">3 jam</span>.</p>
             </div>
             
             <!-- Card 3 -->
             <div class="flex flex-col items-center text-center p-6 bg-white border border-gray-100 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
-                <div class="bg-orange-50 text-brand-orange w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
+                <div class="bg-blue-50 text-brand-blue w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
                     <i class="fa-solid fa-shield-halved"></i>
                 </div>
                 <h3 class="text-base font-bold mb-2">Aman & Tergaransi</h3>
@@ -153,7 +144,7 @@
             
             <!-- Card 4 -->
             <div class="flex flex-col items-center text-center p-6 bg-white border border-gray-100 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
-                <div class="bg-green-50 text-green-500 w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
+                <div class="bg-blue-50 text-brand-blue w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
                     <i class="fa-solid fa-wand-magic-sparkles"></i>
                 </div>
                 <h3 class="text-base font-bold mb-2">Bersih & Higienis</h3>
@@ -162,7 +153,7 @@
     
             <!-- Card 5 -->
             <div class="flex flex-col items-center text-center p-6 bg-white border border-gray-100 rounded-2xl shadow-lg shadow-gray-200/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
-                <div class="bg-purple-50 text-purple-600 w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
+                <div class="bg-blue-50 text-brand-blue w-12 h-12 rounded-full flex items-center justify-center text-xl mb-3">
                     <i class="fa-solid fa-qrcode"></i>
                 </div>
                 <h3 class="text-base font-bold mb-2">Cashless Payment</h3>
@@ -210,31 +201,42 @@
             </div>
 
             <div class="flex justify-center flex-wrap gap-3 mb-10" data-aos="fade-up" data-aos-delay="100">
-                <button class="tab-btn bg-blue-500 text-white border-blue-500 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition shadow-md border" onclick="openPricelistTab(event, 'tab-reguler', 'bg-blue-500', 'border-blue-500')">
+                <!-- Button Reguler (Aktif Default) -->
+                <button class="tab-btn bg-brand-blue text-white border-brand-blue px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition shadow-md border" onclick="openPricelistTab(event, 'tab-reguler', 'bg-brand-blue', 'border-brand-blue')">
                     <i class="fa-solid fa-calendar-check mr-1"></i> Reguler (2-3 Hari)
                 </button>
-                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition border hover:border-orange-500" onclick="openPricelistTab(event, 'tab-oneday', 'bg-orange-500', 'border-orange-500')">
+                
+                <!-- Button One Day -->
+                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition border hover:border-brand-blue" onclick="openPricelistTab(event, 'tab-oneday', 'bg-brand-blue', 'border-brand-blue')">
                     <i class="fa-solid fa-sun mr-1"></i> One Day (24 Jam)
                 </button>
-                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition border hover:border-red-500" onclick="openPricelistTab(event, 'tab-express', 'bg-red-500', 'border-red-500')">
+                
+                <!-- Button Express -->
+                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition border hover:border-brand-blue" onclick="openPricelistTab(event, 'tab-express', 'bg-brand-blue', 'border-brand-blue')">
                     <i class="fa-solid fa-bolt mr-1"></i> Express (6 Jam)
                 </button>
-                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition border hover:border-purple-500" onclick="openPricelistTab(event, 'tab-quick', 'bg-purple-500', 'border-purple-500')">
+                
+                <!-- Button Quick -->
+                <button class="tab-btn bg-white text-gray-600 border-gray-200 px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition border hover:border-brand-blue" onclick="openPricelistTab(event, 'tab-quick', 'bg-brand-blue', 'border-brand-blue')">
                     <i class="fa-solid fa-rocket mr-1"></i> Quick (3 Jam)
                 </button>
             </div>
 
             <div id="tab-reguler" class="tab-content animate-[fadeIn_0.5s_ease-in-out] block">
-                </div>
+                <!-- Konten Reguler -->
+            </div>
 
             <div id="tab-oneday" class="tab-content animate-[fadeIn_0.5s_ease-in-out] hidden">
-                </div>
+                <!-- Konten One Day -->
+            </div>
 
             <div id="tab-express" class="tab-content animate-[fadeIn_0.5s_ease-in-out] hidden">
-                </div>
+                <!-- Konten Express -->
+            </div>
 
             <div id="tab-quick" class="tab-content animate-[fadeIn_0.5s_ease-in-out] hidden">
-                </div>
+                <!-- Konten Quick -->
+            </div>
 
         </div>
     </section>
@@ -516,24 +518,27 @@
         </div>
     </section>
 
-    <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-gray-800">
+    <footer class="bg-white text-gray-800 pt-16 pb-8 border-t border-gray-200">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Kolom 1: Brand & Deskripsi -->
             <div class="space-y-5" data-aos="fade-right">
-                <h2 class="font-extrabold text-xl md:text-2xl tracking-tighter uppercase italic">
+                <h2 class="font-bold text-xl md:text-2xl tracking-tighter uppercase italic text-brand-blue">
                     LaundryBandung<span class="text-brand-orange">.com</span>
                 </h2>
-                <p class="text-[13px] text-gray-400 leading-relaxed font-light">
+                <p class="text-[13px] text-gray-600 leading-relaxed font-light">
                     Solusi Cloud Laundry nomor satu untuk wisatawan dan tamu hotel di Bandung. Jemput di lobi, cucian bersih, rapi, dan wangi dalam hitungan jam!
                 </p>
                 <div class="flex gap-4">
-                    <a href="https://www.instagram.com/laundrybandungcom" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-brand-orange transition text-lg">
+                    <a href="https://www.instagram.com/laundrybandungcom" class="w-10 h-10 rounded-full text-brand-blue flex items-center justify-center hover:text-brand-orange hover:border-brand-orange transition text-xl">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
                 </div>
             </div>
+
+            <!-- Kolom 2: Kontak -->
             <div class="space-y-4" data-aos="fade-up">
-                <h3 class="text-lg font-bold text-brand-orange mb-4 border-b border-gray-700 pb-2 inline-block">Hubungi Kami</h3>
-                <ul class="text-[13px] text-gray-400 space-y-3 font-light">
+                <h3 class="text-lg font-bold text-brand-orange mb-4 border-b border-gray-200 pb-2 inline-block">Hubungi Kami</h3>
+                <ul class="text-[13px] text-gray-600 space-y-3 font-light">
                     <li class="flex items-center gap-3">
                         <i class="fa-solid fa-location-dot text-brand-orange w-4 text-center"></i>
                         <span>Jl. Cihampelas No.193 A, Cipaganti, Kec. Coblong, Kota Bandung 40131</span>
@@ -550,19 +555,23 @@
                     </li>
                 </ul>
             </div>
+
+            <!-- Kolom 3: Maps -->
             <div class="space-y-4" data-aos="fade-left">
-                <h3 class="text-lg font-bold text-brand-orange mb-4 border-b border-gray-700 pb-2 inline-block">Lokasi Operasional</h3>
+                <h3 class="text-lg font-bold text-brand-orange mb-4 border-b border-gray-200 pb-2 inline-block">Lokasi Operasional</h3>
                 
-                <div class="w-full aspect-square md:aspect-auto md:h-40 bg-gray-800 rounded-xl overflow-hidden border border-gray-700 relative">
+                <div class="w-full aspect-square md:aspect-auto md:h-40 bg-gray-100 rounded-xl overflow-hidden border border-gray-200 relative shadow-sm">
                     <iframe class="relative z-10" src="https://maps.google.com/maps?q=Briwash%20Laundry%20Express%20-%20Cihampelas%20Bandung&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-4 mt-10 pt-6 border-t border-gray-800 text-center flex flex-col md:flex-row justify-between items-center gap-4">
+
+        <!-- Bagian Bawah: Copyright & Links -->
+        <div class="max-w-6xl mx-auto px-4 mt-10 pt-6 border-t border-gray-200 text-center flex flex-col md:flex-row justify-between items-center gap-4">
             <p class="text-[11px] text-gray-500 font-light">© 2026 laundrybandung.com. All rights reserved.</p>
-            <div class="flex gap-4 text-[11px] text-gray-500">
-                <button onclick="openModal('modalPrivasi')" class="hover:text-white transition">Kebijakan Privasi</button>
-                <button onclick="openModal('modalSnk')" class="hover:text-white transition">Syarat & Ketentuan</button>
+            <div class="flex gap-4 text-[11px] text-gray-500 font-medium">
+                <button onclick="openModal('modalPrivasi')" class="hover:text-brand-orange transition">Kebijakan Privasi</button>
+                <button onclick="openModal('modalSnk')" class="hover:text-brand-orange transition">Syarat & Ketentuan</button>
             </div>
         </div>
     </footer>
@@ -574,7 +583,7 @@
                 <button onclick="closeModal('modalSnk')" class="text-gray-400 hover:text-red-500 bg-gray-200 rounded-full w-8 h-8 flex items-center justify-center font-bold transition"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <div class="p-6 overflow-y-auto text-[13px] text-gray-600 space-y-3 font-light">
-                <p>1. <b class="font-bold">Pembayaran:</b> Dilakukan di akhir setelah cucian selesai, sistem Cashless (via QRIS). Estimasi waktu pengerjaan dimulai sejak konfirmasi penjemputan.</p>
+                <p>1. <b class="font-bold">Pembayaran:</b> Wajib dilunasi di awal sebelum pakaian diproses (sistem 100% Cashless via QRIS). Estimasi waktu pengerjaan baru dihitung setelah pembayaran terkonfirmasi.</p>
                 <p>2. <b class="font-bold">Kehilangan/Kerusakan:</b> Klaim wajib menyertakan Video Unboxing. Ganti rugi maksimal 10x lipat dari harga jasa cuci barang tersebut.</p>
                 <p>3. <b class="font-bold">Kelunturan:</b> Kami tidak bertanggung jawab atas pakaian luntur/susut karena sifat bahan jika pelanggan tidak memberi catatan khusus sebelumnya.</p>
                 <p>4. <b class="font-bold">Barang Berharga:</b> Pastikan tidak ada uang/barang berharga di saku. Kehilangan barang di dalam saku bukan tanggung jawab kami.</p>
