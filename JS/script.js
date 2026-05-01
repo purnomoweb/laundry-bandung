@@ -477,3 +477,41 @@ function showNotification() {
 
 // Mulai loop notifikasi setelah pengunjung berada di website selama 5 detik
 setTimeout(showNotification, 5000);
+
+// ==========================================
+// ANIMASI COUNTER ANGKA (20.000+)
+// ==========================================
+document.addEventListener("DOMContentLoaded", () => {
+    const counterElement = document.getElementById('tourist-count');
+    if (!counterElement) return;
+
+    const targetNumber = 20000; // Angka tujuan
+    const duration = 2000; // Durasi animasi dalam milidetik (2000ms = 2 detik)
+    let startTime = null;
+
+    function animateCounter(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = currentTime - startTime;
+        
+        // Menghitung persentase progres (maksimal 1 atau 100%)
+        const percentage = Math.min(progress / duration, 1);
+        
+        // Rumus Ease-Out: Animasi berjalan cepat di awal, lalu melambat saat mendekati akhir
+        const easeOut = 1 - Math.pow(1 - percentage, 3);
+        const currentNumber = Math.floor(easeOut * targetNumber);
+
+        // Format angka menjadi format Ribuan Indonesia (titik) -> 20.000
+        counterElement.innerText = currentNumber.toLocaleString('id-ID');
+
+        // Jika belum selesai, panggil lagi animasinya
+        if (percentage < 1) {
+            requestAnimationFrame(animateCounter);
+        } else {
+            // Pastikan angka berakhir tepat di target
+            counterElement.innerText = targetNumber.toLocaleString('id-ID');
+        }
+    }
+
+    // Memulai animasi
+    requestAnimationFrame(animateCounter);
+});
