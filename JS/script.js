@@ -404,28 +404,33 @@ function handleOrder(e) {
 
     const adminNum = "6285187270055"; 
 
-    let msg = `Form Pickup laundrybandung.com%2C%0A%0A`;
-    msg += `*IDENTITAS*%0A`;
-    msg += `- Nama Lengkap : ${nama}%0A`;
-    msg += `- Alamat Pickup: (sebutkan no kamar jika di kost/hotel) : ${alamat}%0A`;
-    msg += `- No. WhatsApp : ${wa}%0A`;
-    msg += `- Waktu Pickup: ${waktu}%0A%0A`;
+    // PERBAIKAN: Rakit pesan sebagai teks biasa
+    let rawMsg = `*Form Pickup laundrybandung.com*,\n\n`;
+    rawMsg += `*IDENTITAS*\n`;
+    rawMsg += `- Nama Lengkap : ${nama}\n`;
+    rawMsg += `- Alamat Pickup : ${alamat}\n`;
+    rawMsg += `- No. WhatsApp : ${wa}\n`;
+    rawMsg += `- Waktu Pickup: ${waktu}\n\n`;
     
-    msg += `*DETAIL CUCIAN*%0A`;
-    msg += `- Paket Kiloan : ${paket}%0A`;
-    msg += `- Cuci Satuan: ${satuan}%0A`;
-    msg += `- Jumlah: ${jumlah}%0A`;
-    msg += `- Proses Cuci: ${proses}%0A`;
-    msg += `- Ada Barang Berharga: ${berharga}%0A`;
-    msg += `- Tas Cucian: ${tas}%0A`;
-    msg += `- Ada Yang Luntur : ${luntur}%0A`;
-    msg += `- Layanan : ${layanan}%0A`;
-    msg += `- Catatan (Jika ada) : ${catatan}%0A%0A`;
+    rawMsg += `*DETAIL CUCIAN*\n`;
+    rawMsg += `- Paket Kiloan : ${paket}\n`;
+    rawMsg += `- Cuci Satuan: ${satuan}\n`;
+    rawMsg += `- Jumlah: ${jumlah}\n`;
+    rawMsg += `- Proses Cuci: ${proses}\n`;
+    rawMsg += `- Ada Barang Berharga: ${berharga}\n`;
+    rawMsg += `- Tas Cucian: ${tas}\n`;
+    rawMsg += `- Ada Yang Luntur : ${luntur}\n`;
+    rawMsg += `- Layanan : ${layanan}\n`;
+    rawMsg += `- Catatan (Jika ada) : ${catatan}\n\n`;
     
-    msg += `*PERINGATAN*:%0A`;
-    msg += `Dengan order artinya *menyetujui Syarat dan Ketentuan yang berlaku*. Pembayaran 100% *Cashless*. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib *Video Unboxing*.`;
+    rawMsg += `*PERINGATAN*:\n`;
+    rawMsg += `Dengan order artinya *menyetujui Syarat dan Ketentuan yang berlaku*. Pembayaran 100% *Cashless*. Estimasi waktu dimulai setelah pembayaran lunas. Kami tidak bertanggung jawab atas transfer di luar sistem resmi. Komplain wajib *Video Unboxing*.`;
 
-    window.open(`https://api.whatsapp.com/send/?phone=${adminNum}&text=${msg}`, '_blank');
+    // ENKODE SELURUH PESAN AGAR AMAN UNTUK URL
+    const encodedMsg = encodeURIComponent(rawMsg);
+
+    // Buka link WhatsApp yang sudah dienkode dengan aman
+    window.open(`https://api.whatsapp.com/send/?phone=${adminNum}&text=${encodedMsg}`, '_blank');
 }
 
 // ==========================================
